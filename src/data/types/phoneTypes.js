@@ -1,0 +1,1 @@
+export const phoneTypes = ['Mobile', 'Home', 'Work', 'Fsx'];
