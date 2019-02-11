@@ -4,13 +4,14 @@ import uuid from 'uuid/v4'
 // Reducers
 const addPerson = (state, action) => {
     const {name, defaultPhone} = action.payload;
-    state.push({id: uuid(), name,  defaultPhone})
+    const id = uuid();
+    state[id] = {id, name,  defaultPhone};
 };
 
 // Slice
 export const people = createSlice({
     slice: 'people',
-    initialState: [],
+    initialState: {},
     reducers: {
         addPerson
     }
