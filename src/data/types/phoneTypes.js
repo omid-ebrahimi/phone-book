@@ -1,1 +1,1 @@
-export const phoneTypes = ['Mobile', 'Home', 'Work', 'Fsx'];
+export const phoneTypes = ['Mobile', 'Home', 'Work', 'Fax'];
