@@ -15,7 +15,7 @@ class PeopleScreen extends Component {
             <div>
                 {
                     Object.values(people).map(
-                        person => (<div key={person.id}>{person.name}<br/></div>)
+                        person => (<div key={person.id}>{person.name}<br/>{person.defaultPhone}</div>)
                     )
                 }
             </div>
