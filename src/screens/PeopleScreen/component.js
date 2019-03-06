@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import Card, {CardPrimaryContent} from "@material/react-card";
 
 class PeopleScreen extends Component {
     // For Test
@@ -15,7 +16,13 @@ class PeopleScreen extends Component {
             <div>
                 {
                     Object.values(people).map(
-                        person => (<div key={person.id}>{person.name}<br/>{person.defaultPhone}</div>)
+                        person => (
+                            <Card key={person.id}>
+                                <CardPrimaryContent>
+                                    <h1>{person.name}</h1>
+                                    <p>Phone: {person.defaultPhone}</p>
+                                </CardPrimaryContent>
+                            </Card>)
                     )
                 }
             </div>
