@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Card, {CardPrimaryContent} from "@material/react-card";
+import Card, {CardPrimaryContent} from '@material/react-card';
 
 class PeopleScreen extends Component {
     // For Test

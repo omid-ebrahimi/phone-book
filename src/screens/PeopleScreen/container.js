@@ -1,7 +1,7 @@
-import {connect} from 'react-redux'
-import {people, phones} from '../../data/store/slices'
-import PeopleScreen from "./component";
-import uuid from 'uuid/v4'
+import {connect} from 'react-redux';
+import {people, phones} from '../../data/store/slices';
+import PeopleScreen from './component';
+import uuid from 'uuid/v4';
 
 const mapStateToProps = state => {
     const {people} = state;
