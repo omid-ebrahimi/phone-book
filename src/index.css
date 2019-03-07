@@ -12,3 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+header, section, footer, aside, nav, main, article, figure {
+  display: block;
+}
