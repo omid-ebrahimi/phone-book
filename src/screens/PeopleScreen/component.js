@@ -23,7 +23,7 @@ class PeopleScreen extends Component {
                     Object.values(people).map(
                         person => (
                             <Card key={person.id} className='card'>
-                                <CardPrimaryContent>
+                                <CardPrimaryContent className='card-primary-content'>
                                     <h1>{person.name}</h1>
                                     <p>Phone: {person.defaultPhone}</p>
                                 </CardPrimaryContent>

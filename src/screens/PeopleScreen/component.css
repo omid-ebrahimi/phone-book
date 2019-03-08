@@ -1,9 +1,14 @@
 main {
     display: flex;
     flex-wrap: wrap;
-    margin: 2%;
+    justify-content: center;
 }
 
 .card {
     margin: 1%;
+}
+
+.card-primary-content {
+    width: auto;
+    padding: 1em;
 }
