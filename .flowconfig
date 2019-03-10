@@ -7,5 +7,6 @@
 [lints]
 
 [options]
+lazy_mode=fs
 
 [strict]
