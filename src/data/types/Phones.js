@@ -8,3 +8,13 @@ export const phoneTypes = {
 };
 
 export type PhoneType = $Keys<typeof phoneTypes>;
+
+export type Phone = {
+    personId: string,
+    number: string,
+    type: PhoneType
+}
+
+export type Phones = {
+    [id: string]: Phone
+}
