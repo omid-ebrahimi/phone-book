@@ -1,6 +1,6 @@
 // @flow
 import {createSlice} from 'redux-starter-kit'
-import type {People, Person} from '../../types/People'
+import type {People, Person} from '../../types/people'
 
 // Reducers
 const addPerson = (state: People, action: {payload: Person}) => {
