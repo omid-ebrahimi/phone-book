@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import '@material/react-card/dist/card.css';
+import '@material/react-fab/dist/fab.css';
+import '@material/react-material-icon/dist/material-icon.css';
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 
