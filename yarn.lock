@@ -937,6 +937,15 @@
     classnames "^2.2.6"
     react "^16.4.2"
 
+"@material/react-material-icon@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@material/react-material-icon/-/react-material-icon-0.11.0.tgz#ceb00734764ecc5568395aa7ed1cefc26d5af577"
+  integrity sha512-IXXEABY6kzCG0eOKe0k0VT6KDBA/cZgHCsUnhAn3sjFh7JlV2rlc4uwduFcPCQa9BWfE82/i5wImg9H4bG8h3A==
+  dependencies:
+    "@material/react-ripple" "^0.11.0"
+    classnames "^2.2.6"
+    react "^16.4.2"
+
 "@material/react-ripple@^0.10.0":
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/@material/react-ripple/-/react-ripple-0.10.0.tgz#98fead6a91725648aa50f0fc28bfe2af0d261564"
