@@ -38,7 +38,7 @@ class PeopleScreen extends Component {
                         )
                     }
                 </section>
-                <div className='fab'><Fab icon={<MaterialIcon icon="add"/>}/></div>
+                <div className='fab-container'><Fab textLabel='Add Contact' icon={<MaterialIcon icon="add"/>}/></div>
             </main>
         );
     }

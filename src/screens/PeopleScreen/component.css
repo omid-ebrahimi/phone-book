@@ -13,8 +13,10 @@
     padding: 1em;
 }
 
-.fab {
+.fab-container {
     position: fixed;
     bottom: 15px;
-    right: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
