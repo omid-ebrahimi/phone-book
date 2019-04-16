@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Card, {CardPrimaryContent} from '@material/react-card';
+import {Fab} from '@material/react-fab';
+import MaterialIcon from "@material/react-material-icon";
 import './component.css';
 
 class PeopleScreen extends Component {
@@ -13,23 +15,30 @@ class PeopleScreen extends Component {
         const personId1 =
             this.props.addPerson('Azam Ebrahimi', '09195036341');
         this.props.addPhone(personId1, '09195036341', 'Mobile');
+
+        const personId2 =
+            this.props.addPerson('Arman Ebrahimi', '09155246598');
+        this.props.addPhone(personId2, '09155246598', 'Mobile');
     }
 
     render() {
         const {people} = this.props;
         return (
             <main>
-                {
-                    Object.values(people).map(
-                        person => (
-                            <Card key={person.id} className='card'>
-                                <CardPrimaryContent className='card-primary-content'>
-                                    <h1>{person.name}</h1>
-                                    <p>Phone: {person.defaultPhone}</p>
-                                </CardPrimaryContent>
-                            </Card>)
-                    )
-                }
+                <section className='cards-container'>
+                    {
+                        Object.values(people).map(
+                            person => (
+                                <Card key={person.id} className='card'>
+                                    <CardPrimaryContent className='card-primary-content'>
+                                        <h1>{person.name}</h1>
+                                        <p>Phone: {person.defaultPhone}</p>
+                                    </CardPrimaryContent>
+                                </Card>)
+                        )
+                    }
+                </section>
+                <div className='fab'><Fab icon={<MaterialIcon icon="add"/>}/></div>
             </main>
         );
     }

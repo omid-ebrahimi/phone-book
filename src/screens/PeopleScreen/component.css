@@ -1,4 +1,4 @@
-main {
+.cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -11,4 +11,10 @@ main {
 .card-primary-content {
     width: auto;
     padding: 1em;
+}
+
+.fab {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
 }
