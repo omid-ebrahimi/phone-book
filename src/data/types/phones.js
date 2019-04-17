@@ -10,7 +10,7 @@ export const phoneTypes = {
 export type PhoneType = $Keys<typeof phoneTypes>;
 
 export type Phone = {
-    personId: string,
+    contactId: string,
     number: string,
     type: PhoneType
 }

@@ -16,8 +16,8 @@ const mapDispatchToProps = dispatch => {
         return id
     }
 
-    function addPhone(personId, number, type) {
-        dispatch(phones.actions.addPhone({personId, number, type}))
+    function addPhone(contactId, number, type) {
+        dispatch(phones.actions.addPhone({contactId, number, type}))
     }
 
     return {
