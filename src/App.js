@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
 import Provider from './data/store/provider';
 import ContactsScreen from './screens/ContactsScreen/container';
 
@@ -8,7 +8,10 @@ class App extends Component {
         return (
             <Provider>
                 <BrowserRouter>
-                    <Route exact path="/" component={ContactsScreen} />
+                    <Switch>
+                        <Route exact path="/" render={() => (<Redirect to="/contacts"/>)}/>
+                        <Route exact path="/contacts" component={ContactsScreen}/>
+                    </Switch>
                 </BrowserRouter>
             </Provider>
         );
