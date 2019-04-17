@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
-import {people, phones} from './slices'
+import {contacts, phones} from './slices'
 
 export const reducer = combineReducers({
-    people: people.reducer,
+    contacts: contacts.reducer,
     phones: phones.reducer
 });

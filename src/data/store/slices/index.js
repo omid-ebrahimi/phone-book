@@ -1,2 +1,2 @@
 export {phones} from './phones'
-export {people} from './people'
+export {contacts} from './contacts'
