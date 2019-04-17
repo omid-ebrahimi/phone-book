@@ -4,23 +4,9 @@ import Card, {CardPrimaryContent} from '@material/react-card';
 import {Fab} from '@material/react-fab';
 import MaterialIcon from "@material/react-material-icon";
 import './component.css';
+import {Link} from "react-router-dom";
 
 class ContactsScreen extends Component {
-    // For Test
-    componentDidMount() {
-        const contactId =
-            this.props.addContact('Omid Ebrahimi', '09104588100');
-        this.props.addPhone(contactId, '09104588100', 'Mobile');
-
-        const contactId1 =
-            this.props.addContact('Azam Ebrahimi', '09195036341');
-        this.props.addPhone(contactId1, '09195036341', 'Mobile');
-
-        const contactId2 =
-            this.props.addContact('Arman Ebrahimi', '09155246598');
-        this.props.addPhone(contactId2, '09155246598', 'Mobile');
-    }
-
     render() {
         const {contacts} = this.props;
         return (
@@ -38,16 +24,16 @@ class ContactsScreen extends Component {
                         )
                     }
                 </section>
-                <div className='fab-container'><Fab textLabel='Add Contact' icon={<MaterialIcon icon="add"/>}/></div>
+                <div className='fab-container'>
+                    <Link to='/contacts/create'><Fab textLabel='Add Contact' icon={<MaterialIcon icon="add"/>}/></Link>
+                </div>
             </main>
         );
     }
 }
 
 ContactsScreen.propTypes = {
-    contacts: PropTypes.object.isRequired,
-    addContact: PropTypes.func.isRequired,
-    addPhone: PropTypes.func.isRequired
+    contacts: PropTypes.object.isRequired
 };
 
 export default ContactsScreen;
