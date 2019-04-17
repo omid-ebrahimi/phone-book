@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Switch, Route, Redirect} from "react-router-dom";
 import Provider from './data/store/provider';
-import ContactsScreen from './screens/ContactsScreen/container';
+import ContactsScreen from './screens/Contacts/container';
 
 class App extends Component {
     render() {
