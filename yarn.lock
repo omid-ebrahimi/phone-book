@@ -917,6 +917,37 @@
     "@material/theme" "^0.41.0"
     "@material/typography" "^0.41.0"
 
+"@material/floating-label@^0.41.0":
+  version "0.41.0"
+  resolved "https://registry.yarnpkg.com/@material/floating-label/-/floating-label-0.41.0.tgz#17a9af90199b3bcf0ba13b1b5d3616451c7c8c0b"
+  integrity sha512-qI6f1nZU3crXxWAI9fw3U5fHw2qOzEor49EvskbcaV5KSRW5qO+jtfUQ3ib/Vhki7lqhgwNHB/0n7KYhvhjRHQ==
+  dependencies:
+    "@material/animation" "^0.41.0"
+    "@material/base" "^0.41.0"
+    "@material/rtl" "^0.40.1"
+    "@material/theme" "^0.41.0"
+    "@material/typography" "^0.41.0"
+
+"@material/line-ripple@^0.41.0":
+  version "0.41.0"
+  resolved "https://registry.yarnpkg.com/@material/line-ripple/-/line-ripple-0.41.0.tgz#de499b0d1dc7f60ddbf497bcc49be76475642d1f"
+  integrity sha512-5DDIoC3d78fCLhNgle7DRFojT3D2SF+XVpUd3g6yLZmybHB7832p4bgl/qGpbIXwk1wAQA1dkUgKH5foxorjNQ==
+  dependencies:
+    "@material/animation" "^0.41.0"
+    "@material/base" "^0.41.0"
+    "@material/theme" "^0.41.0"
+
+"@material/notched-outline@^0.41.0":
+  version "0.41.0"
+  resolved "https://registry.yarnpkg.com/@material/notched-outline/-/notched-outline-0.41.0.tgz#0b84bc710032fd9809fb21a9233fe3e71a142733"
+  integrity sha512-nQBkOXvkd5G9FeJ9UuecZh88WRgTsnGVvfj7UFJZEkvkzZwLBGUiJS6fF9FYraih3ZFgmphdbJxXEd9af3cqyQ==
+  dependencies:
+    "@material/animation" "^0.41.0"
+    "@material/base" "^0.41.0"
+    "@material/rtl" "^0.40.1"
+    "@material/shape" "^0.41.0"
+    "@material/theme" "^0.41.0"
+
 "@material/react-card@^0.10.0":
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/@material/react-card/-/react-card-0.10.0.tgz#869ee6f59eb5ac6f9bf330d4951309f9753a4e93"
@@ -937,12 +968,39 @@
     classnames "^2.2.6"
     react "^16.4.2"
 
+"@material/react-floating-label@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@material/react-floating-label/-/react-floating-label-0.11.0.tgz#a1de21ea093726cdd77501bff7b8acf867324468"
+  integrity sha512-8iHfZbnRvorJOHLso7wcUoebTHJOow9BR+T474jWDcdvy497IpvttWqoS+XoZrnNPCybVRo39eJDTuf3gakbLg==
+  dependencies:
+    "@material/floating-label" "^0.41.0"
+    classnames "^2.2.6"
+    react "^16.4.2"
+
+"@material/react-line-ripple@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@material/react-line-ripple/-/react-line-ripple-0.11.0.tgz#475367dee47094c9e47c4e0042762f54f93dbd5d"
+  integrity sha512-sk+ChrZn6/e9aEbik4EcMaYtYhy+63YtZoLnFJRGevqrYWTVloWZzS5ehy02tkfiQUf3L3AFtnKAsv3EvsxW0A==
+  dependencies:
+    "@material/line-ripple" "^0.41.0"
+    classnames "^2.2.6"
+    react "^16.4.2"
+
 "@material/react-material-icon@^0.11.0":
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/@material/react-material-icon/-/react-material-icon-0.11.0.tgz#ceb00734764ecc5568395aa7ed1cefc26d5af577"
   integrity sha512-IXXEABY6kzCG0eOKe0k0VT6KDBA/cZgHCsUnhAn3sjFh7JlV2rlc4uwduFcPCQa9BWfE82/i5wImg9H4bG8h3A==
   dependencies:
     "@material/react-ripple" "^0.11.0"
+    classnames "^2.2.6"
+    react "^16.4.2"
+
+"@material/react-notched-outline@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@material/react-notched-outline/-/react-notched-outline-0.11.0.tgz#7554a242ea984921da9f65cb37cd2e4ef2a38be1"
+  integrity sha512-tuA1Fp6nvvMPK7Yj7UcElxKT3KEScjJoKrRP1VTtQMx/HheR5dZ1w7VILgVwFsLQF0jag0/gNTl/EPt9ZJ/cIg==
+  dependencies:
+    "@material/notched-outline" "^0.41.0"
     classnames "^2.2.6"
     react "^16.4.2"
 
@@ -967,6 +1025,18 @@
     react "^16.4.2"
     utility-types "^3.2.1"
 
+"@material/react-text-field@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@material/react-text-field/-/react-text-field-0.11.0.tgz#2a2b0a926fb7ac7291fe2105a019d2337cc099b1"
+  integrity sha512-Ray9hTyzg8VU3b/rU1k/nbLYDe7llqOanrm7JoVcN4g+ldzodPhAfNYnGXhqxpwn+X6lLkZy6a8sblukCmT2rA==
+  dependencies:
+    "@material/react-floating-label" "^0.11.0"
+    "@material/react-line-ripple" "^0.11.0"
+    "@material/react-notched-outline" "^0.11.0"
+    "@material/textfield" "^0.41.0"
+    classnames "^2.2.6"
+    react "^16.4.2"
+
 "@material/ripple@^0.41.0":
   version "0.41.0"
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.41.0.tgz#73dbb9bf0e1d72382926b39f2527c011e689dde2"
@@ -985,6 +1055,22 @@
   version "0.41.0"
   resolved "https://registry.yarnpkg.com/@material/shape/-/shape-0.41.0.tgz#2b1cb9a9e1240965ae25a107bbd6e29ca0257583"
   integrity sha512-k1K3CjOVxclfb/0r28cOa2oJpP7QMA2fP0SOS3Vh8ale5Q2jkaHTL60KX8VkHvV6rMqShpXW+60gPjoz5XRbDQ==
+
+"@material/textfield@^0.41.0":
+  version "0.41.0"
+  resolved "https://registry.yarnpkg.com/@material/textfield/-/textfield-0.41.0.tgz#e12630599b93ed536f10f698bbe9024048a604e4"
+  integrity sha512-kJ52W2gxOS2xfpreVhvHQ1u3UkiDl58duw9HkhEkK5Oi1bSDOtbnlWy0pGTOiAma5ZQgetPNgoa+T0zMBptfnw==
+  dependencies:
+    "@material/animation" "^0.41.0"
+    "@material/base" "^0.41.0"
+    "@material/floating-label" "^0.41.0"
+    "@material/line-ripple" "^0.41.0"
+    "@material/notched-outline" "^0.41.0"
+    "@material/ripple" "^0.41.0"
+    "@material/rtl" "^0.40.1"
+    "@material/shape" "^0.41.0"
+    "@material/theme" "^0.41.0"
+    "@material/typography" "^0.41.0"
 
 "@material/theme@^0.41.0":
   version "0.41.0"
