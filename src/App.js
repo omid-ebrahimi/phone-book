@@ -7,9 +7,9 @@ class App extends Component {
     render() {
         return (
             <Switch>
-                <Route exact path="/" render={() => (<Redirect to="/contacts"/>)}/>
-                <Route exact path="/contacts" component={ContactsScreen}/>
-                <Route exact path="/contacts/create" component={CreateContactScreen}/>
+                <Route path="/" render={() => (<Redirect to="/contacts"/>)} exact/>
+                <Route path="/contacts" component={ContactsScreen} exact/>
+                <Route path="/contacts/create" component={CreateContactScreen} exact/>
             </Switch>
         );
     }
