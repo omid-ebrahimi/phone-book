@@ -5,11 +5,11 @@
 }
 
 .card {
-    margin: 1%;
+    margin: 0.5em;
 }
 
 .card-primary-content {
-    width: auto;
+    width: 15em;
     padding: 1em;
 }
 
