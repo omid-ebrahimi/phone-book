@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import TextField, {HelperText, Input} from '@material/react-text-field';
+import MaterialIcon from "@material/react-material-icon";
+import './component.css';
 
 class CreateContactScreen extends Component {
+    state = {
+        fullName: ''
+    };
+
     // For Test
     componentDidMount() {
         const contactId =
@@ -20,7 +27,20 @@ class CreateContactScreen extends Component {
     render() {
         return (
             <main>
-                Create Contact Page
+                <section className='form'>
+                    <TextField
+                        label='Full Name'
+                        className='text-field'
+                        outlined
+                        helperText={<HelperText>Contact Full Name</HelperText>}
+                        onTrailingIconSelect={() => this.setState({fullName: ''})}
+                        trailingIcon={<MaterialIcon role="button" icon="delete"/>}
+                    ><Input
+                        value={this.state.fullName}
+                        onChange={(e) => this.setState({fullName: e.currentTarget.value})}/>
+                    </TextField>
+                </section>
+
             </main>
         );
     }

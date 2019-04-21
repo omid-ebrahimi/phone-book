@@ -1,0 +1,12 @@
+.form {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.text-field {
+    min-width: 33.3vw;
+}

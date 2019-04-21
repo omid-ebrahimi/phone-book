@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import '@material/react-card/dist/card.css';
 import '@material/react-fab/dist/fab.css';
 import '@material/react-material-icon/dist/material-icon.css';
+import '@material/react-text-field/dist/text-field.css';
 import Provider from './data/store/provider';
 import {BrowserRouter} from "react-router-dom";
 import App from './App';
