@@ -10,7 +10,7 @@ class ContactsScreen extends Component {
     render() {
         const {contacts} = this.props;
         return (
-            <main>
+            <>
                 <section className='cards-container'>
                     {
                         Object.values(contacts).map(
@@ -27,7 +27,7 @@ class ContactsScreen extends Component {
                 <div className='fab-container'>
                     <Link to='/contacts/create'><Fab textLabel='Add Contact' icon={<MaterialIcon icon="add"/>}/></Link>
                 </div>
-            </main>
+            </>
         );
     }
 }

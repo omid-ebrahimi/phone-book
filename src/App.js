@@ -6,11 +6,13 @@ import CreateContactScreen from "./screens/CreateContact/container";
 class App extends Component {
     render() {
         return (
-            <Switch>
-                <Route path="/" render={() => (<Redirect to="/contacts"/>)} exact/>
-                <Route path="/contacts" component={ContactsScreen} exact/>
-                <Route path="/contacts/create" component={CreateContactScreen} exact/>
-            </Switch>
+            <main>
+                <Switch>
+                    <Route path="/" render={() => (<Redirect to="/contacts"/>)} exact/>
+                    <Route path="/contacts" component={ContactsScreen} exact/>
+                    <Route path="/contacts/create" component={CreateContactScreen} exact/>
+                </Switch>
+            </main>
         );
     }
 }
