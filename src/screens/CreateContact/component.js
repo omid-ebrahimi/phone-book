@@ -26,18 +26,20 @@ class CreateContactScreen extends Component {
 
     render() {
         return (
-            <section className='form'>
-                <TextField
-                    label='Full Name'
-                    className='text-field'
-                    outlined
-                    helperText={<HelperText>Contact Full Name</HelperText>}
-                    onTrailingIconSelect={() => this.setState({fullName: ''})}
-                    trailingIcon={<MaterialIcon role="button" icon="delete"/>}
-                ><Input
-                    value={this.state.fullName}
-                    onChange={(e) => this.setState({fullName: e.currentTarget.value})}/>
-                </TextField>
+            <section className='main'>
+                <div>
+                    <TextField
+                        label='Full Name'
+                        className='text-field'
+                        outlined
+                        helperText={<HelperText>Contact Full Name</HelperText>}
+                        onTrailingIconSelect={() => this.setState({fullName: ''})}
+                        trailingIcon={<MaterialIcon role="button" icon="delete"/>}
+                    ><Input
+                        value={this.state.fullName}
+                        onChange={(e) => this.setState({fullName: e.currentTarget.value})}/>
+                    </TextField>
+                </div>
             </section>
         );
     }
