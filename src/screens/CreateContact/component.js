@@ -6,7 +6,8 @@ import './component.css';
 
 class CreateContactScreen extends Component {
     state = {
-        fullName: ''
+        contact: {id: '', name: '', defaultPhone: ''},
+        phones: [{number: '', type: ''}]
     };
 
     // For Test
@@ -24,22 +25,48 @@ class CreateContactScreen extends Component {
         this.props.addPhone(contactId2, '09155246598', 'Mobile');
     }
 
+    setContactName(name) {
+        this.setState(({contact}) => ({contact: {...contact, name}}))
+    }
+
+    setPhoneNumber(index, number) {
+        this.setState(({phones}) => {
+            phones[index].number = number;
+            return {phones}
+        });
+    }
+
     render() {
+        const {contact, phones} = this.state;
         return (
             <section className='main'>
-                <div>
-                    <TextField
-                        label='Full Name'
-                        className='text-field'
-                        outlined
-                        helperText={<HelperText>Contact Full Name</HelperText>}
-                        onTrailingIconSelect={() => this.setState({fullName: ''})}
-                        trailingIcon={<MaterialIcon role="button" icon="delete"/>}
-                    ><Input
-                        value={this.state.fullName}
-                        onChange={(e) => this.setState({fullName: e.currentTarget.value})}/>
+                <section className='form-section'>
+                    <TextField label='Full Name'
+                               className='full-width'
+                               outlined
+                               helperText={<HelperText>Contact Full Name</HelperText>}
+                               onTrailingIconSelect={() => this.setContactName('')}
+                               trailingIcon={<MaterialIcon role="button" icon="delete"/>}
+                    ><Input value={contact.name}
+                            onChange={(e) => this.setContactName(e.currentTarget.value)}/>
                     </TextField>
-                </div>
+                </section>
+                <section className='form-section'>
+                    <h1>Phones</h1>
+                    {
+                        phones.map((phone, index) =>
+                            <div key={index} className='text-field'>
+                                <TextField
+                                    onTrailingIconSelect={() => this.setPhoneNumber(index, '')}
+                                    trailingIcon={<MaterialIcon role="button" icon="delete"/>}
+                                ><Input
+                                    value={phone.number}
+                                    onChange={(e) => this.setPhoneNumber(index, e.currentTarget.value)}/>
+                                </TextField>
+                            </div>
+                        )
+                    }
+                </section>
             </section>
         );
     }

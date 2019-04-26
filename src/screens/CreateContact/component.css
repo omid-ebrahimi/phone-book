@@ -7,6 +7,10 @@
     overflow-x: hidden;
 }
 
-.text-field {
+.form-section {
     min-width: 33.3vw;
+}
+
+.full-width {
+    min-width: 100%;
 }
