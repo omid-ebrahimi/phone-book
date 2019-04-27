@@ -7,6 +7,7 @@
     "@material/react-fab": "^0.11.0",
     "@material/react-material-icon": "^0.11.0",
     "@material/react-text-field": "^0.11.0",
+    "basscss-flexbox": "^1.0.2",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-redux": "^6.0.1",
