@@ -55,13 +55,12 @@ class CreateContactScreen extends Component {
                     <h1>Phones</h1>
                     {
                         phones.map((phone, index) =>
-                            <div key={index} className='text-field'>
-                                <TextField
-                                    onTrailingIconSelect={() => this.setPhoneNumber(index, '')}
-                                    trailingIcon={<MaterialIcon role="button" icon="delete"/>}
-                                ><Input
-                                    value={phone.number}
-                                    onChange={(e) => this.setPhoneNumber(index, e.currentTarget.value)}/>
+                            <div key={index}>
+                                <TextField className='col-9'
+                                           onTrailingIconSelect={() => this.setPhoneNumber(index, '')}
+                                           trailingIcon={<MaterialIcon role="button" icon="delete"/>}
+                                ><Input value={phone.number}
+                                        onChange={(e) => this.setPhoneNumber(index, e.currentTarget.value)}/>
                                 </TextField>
                             </div>
                         )
