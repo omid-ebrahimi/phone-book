@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import {Switch, Route, Redirect} from "react-router-dom";
-import ContactsScreen from './screens/Contacts/container';
-import CreateContactScreen from "./screens/CreateContact/container";
+import {BrowserRouter} from "react-router-dom";
+import Provider from './data/store/provider';
+import Router from "./Router";
 
 class App extends Component {
     render() {
         return (
-            <main>
-                <Switch>
-                    <Route path="/" render={() => (<Redirect to="/contacts"/>)} exact/>
-                    <Route path="/contacts" component={ContactsScreen} exact/>
-                    <Route path="/contacts/create" component={CreateContactScreen} exact/>
-                </Switch>
-            </main>
+            <Provider>
+                <BrowserRouter>
+                    <main>
+                        <Router/>
+                    </main>
+                </BrowserRouter>
+            </Provider>
         );
     }
 }
