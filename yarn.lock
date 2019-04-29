@@ -1932,6 +1932,11 @@ basscss-flexbox@^1.0.2:
   resolved "https://registry.yarnpkg.com/basscss-flexbox/-/basscss-flexbox-1.0.2.tgz#0f85e8c50618c023c5cff1227e6b3538fc0d9a32"
   integrity sha512-AtG6yBmmza2nPo3x9X4/7rbW22gLmiSvYvirFs7Aspt1zp5FHwpRBz3BD2v/a3qPdmVM8OvOLVNWISGM6O50MA==
 
+basscss-grid@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/basscss-grid/-/basscss-grid-2.0.0.tgz#6f4c3198e786a38529f8362bc3b3bce5254c1369"
+  integrity sha1-b0wxmOeGo4Up+DYrw7O85SVME2k=
+
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
