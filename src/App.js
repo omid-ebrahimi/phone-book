@@ -1,20 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {BrowserRouter} from "react-router-dom";
 import Provider from './data/store/provider';
-import Router from "./Router";
+import MainRouter from "./MainRouter";
 
-class App extends Component {
-    render() {
-        return (
-            <Provider>
-                <BrowserRouter>
-                    <main>
-                        <Router/>
-                    </main>
-                </BrowserRouter>
-            </Provider>
-        );
-    }
-}
+const App = () => (
+    <Provider>
+        <BrowserRouter>
+            <main>
+                <MainRouter/>
+            </main>
+        </BrowserRouter>
+    </Provider>
+);
 
 export default App;
