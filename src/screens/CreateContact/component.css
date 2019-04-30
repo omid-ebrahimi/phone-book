@@ -7,10 +7,6 @@
     overflow-x: hidden;
 }
 
-.form-section {
+.form {
     min-width: 33.3vw;
-}
-
-.full-width {
-    min-width: 100%;
 }
