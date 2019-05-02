@@ -1,14 +1,15 @@
 import React from 'react';
 import PhoneField from "./components/PhoneField";
 
-export const PhonesList = ({phones, setPhoneNumber}) => {
+export const PhonesList = ({phones, setPhoneNumber, setPhoneType}) => {
     return (
         <>
             <h1>Phones</h1>
             {
                 phones.map((phone, index) =>
-                    <PhoneField key={index} number={phone.number}
-                                setPhoneNumber={(number) => setPhoneNumber(index, number)}/>
+                    <PhoneField key={index} phone={phone}
+                                setPhoneNumber={(number) => setPhoneNumber(index, number)}
+                                setPhoneType={(type) => setPhoneType(index, type)}/>
                 )
             }
         </>

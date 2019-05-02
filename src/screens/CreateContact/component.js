@@ -6,7 +6,7 @@ import './component.css';
 class CreateContactScreen extends Component {
     state = {
         contact: {id: '', name: '', defaultPhone: ''},
-        phones: [{number: '', type: ''}]
+        phones: [{number: '', type: 'Mobile'}]
     };
 
     // For Test
@@ -35,13 +35,22 @@ class CreateContactScreen extends Component {
         });
     }
 
+    setPhoneType(index, type) {
+        this.setState(({phones}) => {
+            phones[index].type = type;
+            return {phones}
+        });
+    }
+
     render() {
         const {contact, phones} = this.state;
         return (
             <section className='main'>
                 <section className='form'>
                     <ContactInfo name={contact.name} setContactName={(name) => this.setContactName(name)}/>
-                    <PhonesList phones={phones} setPhoneNumber={(index, number) => this.setPhoneNumber(index, number)}/>
+                    <PhonesList phones={phones}
+                                setPhoneNumber={(index, number) => this.setPhoneNumber(index, number)}
+                                setPhoneType={(index, type) => this.setPhoneType(index, type)}/>
                 </section>
             </section>
         );
