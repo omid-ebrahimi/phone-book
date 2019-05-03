@@ -1,5 +1,9 @@
 @import '~basscss-flexbox/index.css';
 @import '~basscss-grid/lib/grid.css';
+@import '~@material/react-card/dist/card.css';
+@import '~@material/react-fab/dist/fab.css';
+@import '~@material/react-material-icon/dist/material-icon.css';
+@import '~@material/react-text-field/dist/text-field.css';
 @import '~@material/react-menu-surface/dist/menu-surface.css';
 @import '~@material/react-button/dist/button.css';
 @import '~@material/react-list/dist/list.css';
