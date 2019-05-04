@@ -5,7 +5,7 @@ import SelectMenu from '../../../../../../components/SelectMenu';
 
 const PhoneField = ({phone: {number, type}, setPhoneNumber, setPhoneType}) => {
     return (
-        <section className='flex justify-between'>
+        <section className='flex justify-between mb1'>
             <CleanableTextField className='col-9' value={number} setValue={(number) => setPhoneNumber(number)}/>
             <SelectMenu items={Object.values(phoneTypes)} selectedItem={type}
                         onSelectItem={(type) => setPhoneType(type)}/>

@@ -13,6 +13,7 @@
     "@material/react-typography": "^0.12.0",
     "basscss-flexbox": "^1.0.2",
     "basscss-grid": "^2.0.0",
+    "basscss-margin": "^1.0.9",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-redux": "^6.0.1",
