@@ -49,6 +49,13 @@ class CreateContactScreen extends Component {
         });
     }
 
+    removePhone(index) {
+        this.setState(({phones}) => {
+            phones.splice(index, 1);
+            return {phones}
+        });
+    }
+
     render() {
         const {contact, phones} = this.state;
         return (
@@ -58,7 +65,8 @@ class CreateContactScreen extends Component {
                     <PhonesList phones={phones}
                                 setPhoneNumber={(index, number) => this.setPhoneNumber(index, number)}
                                 setPhoneType={(index, type) => this.setPhoneType(index, type)}
-                                addPhone={() => this.addPhone()}/>
+                                addPhone={() => this.addPhone()}
+                                removePhone={(index) => this.removePhone(index)}/>
                 </section>
             </section>
         );
