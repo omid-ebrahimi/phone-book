@@ -937,6 +937,11 @@
     "@material/theme" "^0.41.0"
     "@material/typography" "^0.41.0"
 
+"@material/feature-targeting@^0.44.1":
+  version "0.44.1"
+  resolved "https://registry.yarnpkg.com/@material/feature-targeting/-/feature-targeting-0.44.1.tgz#afafc80294e5efab94bee31a187273d43d34979a"
+  integrity sha512-90cc7njn4aHbH9UxY8qgZth1W5JgOgcEdWdubH1t7sFkwqFxS5g3zgxSBt46TygFBVIXNZNq35Xmg80wgqO7Pg==
+
 "@material/floating-label@^0.41.0":
   version "0.41.0"
   resolved "https://registry.yarnpkg.com/@material/floating-label/-/floating-label-0.41.0.tgz#17a9af90199b3bcf0ba13b1b5d3616451c7c8c0b"
@@ -1111,6 +1116,15 @@
     classnames "^2.2.6"
     react "^16.4.2"
 
+"@material/react-typography@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@material/react-typography/-/react-typography-0.12.0.tgz#bb1d0a2326c8c975d1d15806cb36ea2555ec45a2"
+  integrity sha512-XLOMf0dEOoooOx1dZBfUu6MKaHbWEIPSW/+mcXE0pM9StnHnJRZaRxiFB+R4FPGGZJvLjcI8aQEK82iP9smvEA==
+  dependencies:
+    "@material/typography" "^1.0.0"
+    classnames "^2.2.6"
+    react "^16.4.2"
+
 "@material/ripple@^0.41.0":
   version "0.41.0"
   resolved "https://registry.yarnpkg.com/@material/ripple/-/ripple-0.41.0.tgz#73dbb9bf0e1d72382926b39f2527c011e689dde2"
@@ -1184,6 +1198,13 @@
   version "0.43.0"
   resolved "https://registry.yarnpkg.com/@material/typography/-/typography-0.43.0.tgz#808abf66c65e11ef8e6c690995803f6825d7d8f3"
   integrity sha512-WSg8vDoC2rnmOWbhNdDmSoT1jV0QQSw7CFps1DFbnIe57UaUxgWuGdhc+9XlEPctXUFto4FU4DfnRcdW4ydAig==
+
+"@material/typography@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@material/typography/-/typography-1.0.0.tgz#327ecfcac5ee3af8a3a102f3f125a761202f4189"
+  integrity sha512-Oeqbjci1cC7jTE8/n3dwnkqKe9ZeWiaE+rgMtRYtRFw1HvAw14SpGA5EEAS/Li2Hu2KZ50FYCe3HYqShfxtChA==
+  dependencies:
+    "@material/feature-targeting" "^0.44.1"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

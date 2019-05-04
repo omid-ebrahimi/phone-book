@@ -7,6 +7,7 @@
 @import '~@material/react-menu-surface/dist/menu-surface.css';
 @import '~@material/react-button/dist/button.css';
 @import '~@material/react-list/dist/list.css';
+@import "~@material/react-typography/dist/typography.css";
 
 body {
   margin: 0;
