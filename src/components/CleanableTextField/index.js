@@ -7,7 +7,7 @@ const CleanableTextField = ({value, setValue, label, className, outlined, helper
         <TextField label={label}
                    className={className}
                    outlined={outlined}
-                   helperText={<HelperText>{helperText}</HelperText>}
+                   helperText={helperText ? <HelperText>{helperText}</HelperText> : null}
                    onTrailingIconSelect={() => setValue('')}
                    trailingIcon={<MaterialIcon role="button" icon="delete"/>}>
             <Input value={value} onChange={(e) => setValue(e.currentTarget.value)}/>
