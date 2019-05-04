@@ -42,6 +42,13 @@ class CreateContactScreen extends Component {
         });
     }
 
+    addPhone() {
+        this.setState(({phones}) => {
+            phones.push({number: '', type: 'Mobile'});
+            return {phones}
+        });
+    }
+
     render() {
         const {contact, phones} = this.state;
         return (
@@ -50,7 +57,8 @@ class CreateContactScreen extends Component {
                     <ContactInfo name={contact.name} setContactName={(name) => this.setContactName(name)}/>
                     <PhonesList phones={phones}
                                 setPhoneNumber={(index, number) => this.setPhoneNumber(index, number)}
-                                setPhoneType={(index, type) => this.setPhoneType(index, type)}/>
+                                setPhoneType={(index, type) => this.setPhoneType(index, type)}
+                                addPhone={() => this.addPhone()}/>
                 </section>
             </section>
         );
