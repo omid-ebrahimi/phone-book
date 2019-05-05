@@ -17,8 +17,16 @@ class SelectMenu extends Component {
         this.setState({anchorElement: element});
     };
 
+    handleSelect(index) {
+        const {items, onSelectItem} = this.props;
+
+        this.setState({open: false});
+
+        onSelectItem(items[index])
+    }
+
     render() {
-        const {items, selectedItem, onSelectItem} = this.props;
+        const {items, selectedItem} = this.props;
         return (
             <div
                 className='mdc-menu-surface--anchor'
@@ -32,7 +40,7 @@ class SelectMenu extends Component {
                     onClose={() => this.setState({open: false})}
                     anchorElement={this.state.anchorElement}
                 >
-                    <List handleSelect={(selectedIndex) => onSelectItem(items[selectedIndex])}>
+                    <List handleSelect={(selectedIndex) => this.handleSelect(selectedIndex)}>
                         {
                             items.map((item, index) => (
                                 <ListItem key={index}>
