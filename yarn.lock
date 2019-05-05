@@ -985,6 +985,11 @@
     "@material/theme" "^1.1.0"
     tslib "^1.9.3"
 
+"@material/layout-grid@^0.41.0":
+  version "0.41.0"
+  resolved "https://registry.yarnpkg.com/@material/layout-grid/-/layout-grid-0.41.0.tgz#2e7d3be76313e0684d573b10c2c6a88b3230d251"
+  integrity sha512-Sa5RNoTGgfIojqJ9E94p7/k11V6q/tGk7HwKi4AQNAPjxield0zcl3G/SbsSb8YSHoK+D+7OXDN+n11x6EqF7g==
+
 "@material/line-ripple@^0.41.0":
   version "0.41.0"
   resolved "https://registry.yarnpkg.com/@material/line-ripple/-/line-ripple-0.41.0.tgz#de499b0d1dc7f60ddbf497bcc49be76475642d1f"
@@ -1078,6 +1083,15 @@
     "@material/react-ripple" "^0.12.0"
     classnames "^2.2.6"
     react "^16.3.2"
+
+"@material/react-layout-grid@^0.12.0":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@material/react-layout-grid/-/react-layout-grid-0.12.0.tgz#189c60a343a5914c50640ef71371ebf887191381"
+  integrity sha512-h4qce+aYK8JSqMS8iL4j5OmvEl2mMt4qyFXurYUZetuyASeqVNERIYiHOMKnIIxqp6mu7J10eAkJV8ov9TaBsw==
+  dependencies:
+    "@material/layout-grid" "^0.41.0"
+    classnames "^2.2.6"
+    react "^16.4.2"
 
 "@material/react-line-ripple@^0.11.0":
   version "0.11.0"

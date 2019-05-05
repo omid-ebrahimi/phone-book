@@ -10,6 +10,7 @@
 @import '~@material/react-list/dist/list.css';
 @import "~@material/react-typography/dist/typography.css";
 @import "~@material/react-icon-button/dist/icon-button.css";
+@import "~@material/react-layout-grid/dist/layout-grid.css";
 
 body {
   margin: 0;
