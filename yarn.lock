@@ -2147,6 +2147,11 @@ basscss-grid@^2.0.0:
   resolved "https://registry.yarnpkg.com/basscss-grid/-/basscss-grid-2.0.0.tgz#6f4c3198e786a38529f8362bc3b3bce5254c1369"
   integrity sha1-b0wxmOeGo4Up+DYrw7O85SVME2k=
 
+basscss-layout@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/basscss-layout/-/basscss-layout-3.1.0.tgz#f9f392e480da66657d9fe5de9ca4c07c579c3a4e"
+  integrity sha1-+fOS5IDaZmV9n+XenKTAfFecOk4=
+
 basscss-margin@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/basscss-margin/-/basscss-margin-1.0.9.tgz#1e5800996ec8e8f362db4db52a51ece6d77a9fde"
