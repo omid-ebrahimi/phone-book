@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {ContactInfo, PhonesList} from './components'
-import './component.css';
+import {Cell, Grid, Row} from '@material/react-layout-grid';
 
 class CreateContactScreen extends Component {
     state = {
@@ -59,16 +59,20 @@ class CreateContactScreen extends Component {
     render() {
         const {contact, phones} = this.state;
         return (
-            <section className='main'>
-                <section className='form'>
-                    <ContactInfo name={contact.name} setContactName={(name) => this.setContactName(name)}/>
-                    <PhonesList phones={phones}
-                                setPhoneNumber={(index, number) => this.setPhoneNumber(index, number)}
-                                setPhoneType={(index, type) => this.setPhoneType(index, type)}
-                                addPhone={() => this.addPhone()}
-                                removePhone={(index) => this.removePhone(index)}/>
-                </section>
-            </section>
+            <Grid>
+                <Row className='overflow-hidden'>
+                    <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
+                    <Cell desktopColumns={4} tabletColumns={6} phoneColumns={4}>
+                        <ContactInfo name={contact.name} setContactName={(name) => this.setContactName(name)}/>
+                        <PhonesList phones={phones}
+                                    setPhoneNumber={(index, number) => this.setPhoneNumber(index, number)}
+                                    setPhoneType={(index, type) => this.setPhoneType(index, type)}
+                                    addPhone={() => this.addPhone()}
+                                    removePhone={(index) => this.removePhone(index)}/>
+                    </Cell>
+                    <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
+                </Row>
+            </Grid>
         );
     }
 }
