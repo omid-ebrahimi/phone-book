@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {ContactInfo, PhonesList} from './components'
 import {Cell, Grid, Row} from '@material/react-layout-grid';
+import Button from '@material/react-button';
 
 class CreateContactScreen extends Component {
     state = {
@@ -69,6 +70,14 @@ class CreateContactScreen extends Component {
                                     setPhoneType={(index, type) => this.setPhoneType(index, type)}
                                     addPhone={() => this.addPhone()}
                                     removePhone={(index) => this.removePhone(index)}/>
+                    </Cell>
+                    <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
+                </Row>
+                <Row className='sticky bottom-0 mt1 z1'>
+                    <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
+                    <Cell desktopColumns={4} tabletColumns={6} phoneColumns={4} className='flex justify-between'>
+                        <Button className='col-5' style={{background: 'white'}} outlined>Cancel</Button>
+                        <Button className='col-5' raised>Save</Button>
                     </Cell>
                     <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
                 </Row>

@@ -32,3 +32,9 @@ code {
 header, section, footer, aside, nav, main, article, figure {
   display: block;
 }
+
+/*position*/
+
+.sticky {
+  position: sticky;
+}
