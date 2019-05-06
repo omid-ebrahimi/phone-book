@@ -13,16 +13,16 @@ class CreateContactScreen extends Component {
     // For Test
     componentDidMount() {
         const contactId =
-            this.props.addContact('Omid Ebrahimi', '09104588100');
-        this.props.addPhone(contactId, '09104588100', 'Mobile');
+            this.props.updateContact('Omid Ebrahimi', '09104588100', '');
+        this.props.updatePhone(contactId, '09104588100', 'Mobile');
 
         const contactId1 =
-            this.props.addContact('Azam Ebrahimi', '09195036341');
-        this.props.addPhone(contactId1, '09195036341', 'Mobile');
+            this.props.updateContact('Azam Ebrahimi', '09195036341', '');
+        this.props.updatePhone(contactId1, '09195036341', 'Mobile');
 
         const contactId2 =
-            this.props.addContact('Arman Ebrahimi', '09155246598');
-        this.props.addPhone(contactId2, '09155246598', 'Mobile');
+            this.props.updateContact('Arman Ebrahimi', '09155246598', '');
+        this.props.updatePhone(contactId2, '09155246598', 'Mobile');
     }
 
     setContactName(name) {
@@ -57,6 +57,10 @@ class CreateContactScreen extends Component {
         });
     }
 
+    handleSave() {
+
+    }
+
     render() {
         const {contact, phones} = this.state;
         return (
@@ -77,7 +81,7 @@ class CreateContactScreen extends Component {
                     <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
                     <Cell desktopColumns={4} tabletColumns={6} phoneColumns={4} className='flex justify-between'>
                         <Button className='col-5' style={{background: 'white'}} outlined>Cancel</Button>
-                        <Button className='col-5' raised>Save</Button>
+                        <Button onClick={() => this.handleSave()} className='col-5' raised>Save</Button>
                     </Cell>
                     <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
                 </Row>
@@ -87,8 +91,8 @@ class CreateContactScreen extends Component {
 }
 
 CreateContactScreen.propTypes = {
-    addContact: PropTypes.func.isRequired,
-    addPhone: PropTypes.func.isRequired
+    updateContact: PropTypes.func.isRequired,
+    updatePhone: PropTypes.func.isRequired
 };
 
 export default CreateContactScreen;
