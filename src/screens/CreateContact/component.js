@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {ContactInfo, PhonesList} from './components'
-import {Cell, Grid, Row} from '@material/react-layout-grid';
+import {ContactInfo, PhonesList} from './components';
+import {Grid, Row} from '@material/react-layout-grid';
 import Button from '@material/react-button';
+import CellCenter from '../../components/CellCenter';
 
 class CreateContactScreen extends Component {
     state = {
@@ -66,24 +67,20 @@ class CreateContactScreen extends Component {
         return (
             <Grid>
                 <Row className='overflow-hidden'>
-                    <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
-                    <Cell desktopColumns={4} tabletColumns={6} phoneColumns={4}>
+                    <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}>
                         <ContactInfo name={contact.name} setContactName={(name) => this.setContactName(name)}/>
                         <PhonesList phones={phones}
                                     setPhoneNumber={(index, number) => this.setPhoneNumber(index, number)}
                                     setPhoneType={(index, type) => this.setPhoneType(index, type)}
                                     addPhone={() => this.addPhone()}
                                     removePhone={(index) => this.removePhone(index)}/>
-                    </Cell>
-                    <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
+                    </CellCenter>
                 </Row>
                 <Row className='sticky bottom-0 mt1 z1'>
-                    <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
-                    <Cell desktopColumns={4} tabletColumns={6} phoneColumns={4} className='flex justify-between'>
+                    <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4} className='flex justify-between'>
                         <Button className='col-5' style={{background: 'white'}} outlined>Cancel</Button>
                         <Button onClick={() => this.handleSave()} className='col-5' raised>Save</Button>
-                    </Cell>
-                    <Cell desktopColumns={4} tabletColumns={1} phoneColumns={0}> </Cell>
+                    </CellCenter>
                 </Row>
             </Grid>
         );
