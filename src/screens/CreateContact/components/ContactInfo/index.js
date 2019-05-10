@@ -5,6 +5,6 @@ export const ContactInfo = ({name, setContactName}) => {
     return (
         <CleanableTextField className='col-12 mt1' outlined
                             label='Full Name' helperText='Contact Full Name'
-                            value={name} setValue={(name) => setContactName(name)}/>
+                            value={name} setValue={setContactName}/>
     );
 };

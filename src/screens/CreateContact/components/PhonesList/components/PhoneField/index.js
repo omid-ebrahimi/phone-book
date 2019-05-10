@@ -14,7 +14,7 @@ const PhoneField = ({phone: {number, type}, setPhoneNumber, setPhoneType, remove
             </TextField>
 
             <SelectMenu items={Object.values(phoneTypes)} selectedItem={type}
-                        onSelectItem={(type) => setPhoneType(type)}/>
+                        onSelectItem={setPhoneType}/>
 
             <IconButton onClick={removePhone}>
                 <MaterialIcon icon="remove"/>
