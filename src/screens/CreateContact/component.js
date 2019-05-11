@@ -4,6 +4,9 @@ import {ContactInfo, PhonesList} from './components';
 import {Grid, Row} from '@material/react-layout-grid';
 import Button from '@material/react-button';
 import CellCenter from '../../components/CellCenter';
+import {string} from 'yup';
+
+const nameSchema = string().trim().max(30).required();
 
 class CreateContactScreen extends Component {
     state = {
@@ -68,7 +71,7 @@ class CreateContactScreen extends Component {
             <Grid>
                 <Row className='overflow-hidden'>
                     <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}>
-                        <ContactInfo name={contact.name} setContactName={(name) => this.setContactName(name)}/>
+                        <ContactInfo name={contact.name} setContactName={(name) => this.setContactName(name)} nameSchema={nameSchema}/>
                         <PhonesList phones={phones}
                                     setPhoneNumber={(index, number) => this.setPhoneNumber(index, number)}
                                     setPhoneType={(index, type) => this.setPhoneType(index, type)}
