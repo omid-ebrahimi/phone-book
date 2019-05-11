@@ -1,16 +1,12 @@
 import React from 'react';
-import TextField, {HelperText, Input} from "@material/react-text-field";
+import TextField from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
 
-const CleanableTextField = ({value, setValue, label, className, outlined, helperText}) => {
+const CleanableTextField = ({clean, children, ...props}) => {
     return (
-        <TextField label={label}
-                   className={className}
-                   outlined={outlined}
-                   helperText={helperText ? <HelperText>{helperText}</HelperText> : null}
-                   onTrailingIconSelect={() => setValue('')}
+        <TextField {...props} onTrailingIconSelect={clean}
                    trailingIcon={<MaterialIcon role="button" icon="delete"/>}>
-            <Input value={value} onChange={(e) => setValue(e.currentTarget.value)}/>
+            {children}
         </TextField>
     );
 };
