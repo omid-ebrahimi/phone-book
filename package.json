@@ -11,6 +11,7 @@
     "@material/react-list": "^0.12.0",
     "@material/react-material-icon": "^0.12.0",
     "@material/react-menu-surface": "^0.12.1",
+    "@material/react-select": "^0.12.1",
     "@material/react-text-field": "^0.12.1",
     "@material/react-typography": "^0.12.0",
     "basscss-flexbox": "^1.0.2",
