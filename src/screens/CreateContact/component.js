@@ -33,6 +33,10 @@ class CreateContactScreen extends Component {
         this.props.updatePhone(contactId2, '09155246598', 'Mobile');
     }
 
+    handleSave(values) {
+
+    }
+
     render() {
         const initialValues = {
             contact: {id: '', name: '', defaultPhone: ''},
@@ -42,7 +46,13 @@ class CreateContactScreen extends Component {
         return (
             <Formik
                 initialValues={initialValues}
-                validationSchema={validationSchema}>
+                validationSchema={validationSchema}
+                onSubmit={(values, { setSubmitting }) => {
+                    setTimeout(() => {
+                        this.handleSave(values);
+                        setSubmitting(false);
+                    }, 400);
+                }}>
                 {
                     ({
                          handleChange,
@@ -51,7 +61,8 @@ class CreateContactScreen extends Component {
                          values,
                          errors,
                          touched,
-                         setFieldValue
+                         setFieldValue,
+                         isSubmitting
                      }) => (
                         <Grid>
                             <Row className='overflow-hidden'>
@@ -80,8 +91,8 @@ class CreateContactScreen extends Component {
                             <Row className='sticky bottom-0 mt1 z1'>
                                 <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}
                                             className='flex justify-between'>
-                                    <Button className='col-5' style={{background: 'white'}} outlined>Cancel</Button>
-                                    <Button className='col-5' onClick={submitForm} raised>Save</Button>
+                                    <Button className='col-5' style={{background: 'white'}} disabled={isSubmitting} outlined>Cancel</Button>
+                                    <Button className='col-5' onClick={submitForm} disabled={isSubmitting} raised>Save</Button>
                                 </CellCenter>
                             </Row>
                         </Grid>
