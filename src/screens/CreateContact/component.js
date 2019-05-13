@@ -45,9 +45,9 @@ class CreateContactScreen extends Component {
                 validationSchema={validationSchema}>
                 {
                     ({
-                         handleSubmit,
                          handleChange,
                          handleBlur,
+                         submitForm,
                          values,
                          errors,
                          touched,
@@ -81,7 +81,7 @@ class CreateContactScreen extends Component {
                                 <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}
                                             className='flex justify-between'>
                                     <Button className='col-5' style={{background: 'white'}} outlined>Cancel</Button>
-                                    <Button className='col-5' onClick={handleSubmit} raised>Save</Button>
+                                    <Button className='col-5' onClick={submitForm} raised>Save</Button>
                                 </CellCenter>
                             </Row>
                         </Grid>

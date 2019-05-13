@@ -10,7 +10,7 @@ const PhoneField = ({phone: {number, type}, setPhoneType, onChange, removePhone,
         <section className='flex justify-between items-center mb1'>
 
             <TextField className='col-7'>
-                <Input value={number} onChange={onChange} id={id}/>
+                <Input value={number} onChange={onChange} id={`${id}.number`}/>
             </TextField>
 
             <SelectMenu items={Object.values(phoneTypes)} selectedItem={type}

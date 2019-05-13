@@ -15,7 +15,7 @@ export const PhonesList = ({phones, setPhoneType, onChange, addPhone, removePhon
             </div>
             {
                 phones.map((phone, index) =>
-                    <PhoneField key={index} phone={phone} id={getPhoneId(index)+'.number'}
+                    <PhoneField key={index} phone={phone} id={getPhoneId(index)}
                                 onChange={onChange}
                                 setPhoneType={(value) => setPhoneType(index, value)}
                                 removePhone={() => removePhone(index)}/>
