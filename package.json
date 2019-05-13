@@ -19,6 +19,7 @@
     "basscss-layout": "^3.1.0",
     "basscss-margin": "^1.0.9",
     "basscss-position": "^2.0.3",
+    "formik": "^1.5.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
