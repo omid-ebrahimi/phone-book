@@ -4,7 +4,7 @@ import MaterialIcon from "@material/react-material-icon";
 import {Headline5} from "@material/react-typography";
 import IconButton from "@material/react-icon-button";
 
-export const PhonesList = ({phones, setPhoneNumber, setPhoneType, addPhone, removePhone}) => {
+export const PhonesList = ({phones, setPhoneType, onChange, addPhone, removePhone, getPhoneId}) => {
     return (
         <>
             <div className='flex justify-between items-center'>
@@ -15,9 +15,9 @@ export const PhonesList = ({phones, setPhoneNumber, setPhoneType, addPhone, remo
             </div>
             {
                 phones.map((phone, index) =>
-                    <PhoneField key={index} phone={phone}
-                                setPhoneNumber={(number) => setPhoneNumber(index, number)}
-                                setPhoneType={(type) => setPhoneType(index, type)}
+                    <PhoneField key={index} phone={phone} id={getPhoneId(index)+'.number'}
+                                onChange={onChange}
+                                setPhoneType={(value) => setPhoneType(index, value)}
                                 removePhone={() => removePhone(index)}/>
                 )
             }

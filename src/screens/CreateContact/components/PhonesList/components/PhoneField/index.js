@@ -5,12 +5,12 @@ import SelectMenu from '../../../../../../components/SelectMenu';
 import MaterialIcon from "@material/react-material-icon";
 import IconButton from '@material/react-icon-button';
 
-const PhoneField = ({phone: {number, type}, setPhoneNumber, setPhoneType, removePhone}) => {
+const PhoneField = ({phone: {number, type}, setPhoneType, onChange, removePhone, id}) => {
     return (
         <section className='flex justify-between items-center mb1'>
 
             <TextField className='col-7'>
-                <Input value={number} onChange={(e) => setPhoneNumber(e.currentTarget.value)}/>
+                <Input value={number} onChange={onChange} id={id}/>
             </TextField>
 
             <SelectMenu items={Object.values(phoneTypes)} selectedItem={type}

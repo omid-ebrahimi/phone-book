@@ -23,11 +23,11 @@ class CleanableTextField extends Component {
     };
 
     render() {
-        const {isValid, value, setValue, onBlur, ...props} = this.props;
+        const {isValid, value, setValue, onBlur, id, ...props} = this.props;
         return (
             <TextField {...props} onTrailingIconSelect={this.cleanAndFocus}
                        trailingIcon={<MaterialIcon role="button" icon="delete"/>}>
-                <Input value={value} onChange={(e) => setValue(e.currentTarget.value)}
+                <Input id={id} value={value} onChange={(e) => setValue(e.currentTarget.value)}
                        isValid={isValid} onBlur={onBlur} ref={input => this.textInput = input}/>
             </TextField>
         );

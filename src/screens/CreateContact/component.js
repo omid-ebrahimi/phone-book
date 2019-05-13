@@ -4,16 +4,20 @@ import {ContactInfo, PhonesList} from './components';
 import {Grid, Row} from '@material/react-layout-grid';
 import Button from '@material/react-button';
 import CellCenter from '../../components/CellCenter';
-import {string} from 'yup';
+import {string, object, array} from 'yup';
+import {Formik, FieldArray} from "formik";
 
-const nameSchema = string().trim().max(30).required();
+const validationSchema = object().shape({
+    contact: object().shape({
+        name: string().trim().max(30).required()
+    }),
+    phones: array().of(
+        object().shape({
+            number: string().trim().max(13)
+        }))
+});
 
 class CreateContactScreen extends Component {
-    state = {
-        contact: {id: '', name: '', defaultPhone: ''},
-        phones: [{number: '', type: 'Mobile'}]
-    };
-
     // For Test
     componentDidMount() {
         const contactId =
@@ -29,63 +33,61 @@ class CreateContactScreen extends Component {
         this.props.updatePhone(contactId2, '09155246598', 'Mobile');
     }
 
-    setContactName(name) {
-        this.setState(({contact}) => ({contact: {...contact, name}}))
-    }
-
-    setPhoneNumber(index, number) {
-        this.setState(({phones}) => {
-            phones[index].number = number;
-            return {phones}
-        });
-    }
-
-    setPhoneType(index, type) {
-        this.setState(({phones}) => {
-            phones[index].type = type;
-            return {phones}
-        });
-    }
-
-    addPhone() {
-        this.setState(({phones}) => {
-            phones.push({number: '', type: 'Mobile'});
-            return {phones}
-        });
-    }
-
-    removePhone(index) {
-        this.setState(({phones}) => {
-            phones.splice(index, 1);
-            return {phones}
-        });
-    }
-
-    handleSave() {
-
-    }
-
     render() {
-        const {contact, phones} = this.state;
+        const initialValues = {
+            contact: {id: '', name: '', defaultPhone: ''},
+            phones: [{number: '', type: 'Mobile'}]
+        };
+
         return (
-            <Grid>
-                <Row className='overflow-hidden'>
-                    <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}>
-                        <ContactInfo name={contact.name} setContactName={(name) => this.setContactName(name)} nameSchema={nameSchema}/>
-                        <PhonesList phones={phones}
-                                    setPhoneNumber={(index, number) => this.setPhoneNumber(index, number)}
-                                    setPhoneType={(index, type) => this.setPhoneType(index, type)}
-                                    addPhone={() => this.addPhone()}
-                                    removePhone={(index) => this.removePhone(index)}/>
-                    </CellCenter>
-                </Row>
-                <Row className='sticky bottom-0 mt1 z1'>
-                    <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4} className='flex justify-between'>
-                        <Button className='col-5' style={{background: 'white'}} outlined>Cancel</Button>
-                        <Button className='col-5' onClick={() => this.handleSave()} raised>Save</Button>
-                    </CellCenter>
-                </Row>
-            </Grid>
+            <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}>
+                {
+                    ({
+                         handleSubmit,
+                         handleChange,
+                         handleBlur,
+                         values,
+                         errors,
+                         touched,
+                         setFieldValue
+                     }) => (
+                        <Grid>
+                            <Row className='overflow-hidden'>
+                                <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}>
+                                    <ContactInfo id='contact.name' contactName={values.contact.name}
+                                                 isValid={!errors.contact || !errors.contact.name || !touched.contact || !touched.contact.name}
+                                                 setContactName={(value) => setFieldValue('contact.name', value)}
+                                                 onBlur={handleBlur}/>
+                                    <FieldArray name='phones'>
+                                        {
+                                            arrayHelpers => (
+                                                <PhonesList phones={values.phones}
+                                                            getPhoneId={(index) => `phones[${index}]`}
+                                                            onChange={handleChange}
+                                                            setPhoneType={(index, value) => setFieldValue(`phones[${index}].type`, value)}
+                                                            addPhone={() => arrayHelpers.push({
+                                                                number: '',
+                                                                type: 'Mobile'
+                                                            })}
+                                                            removePhone={(index) => arrayHelpers.remove(index)}/>
+                                            )
+                                        }
+                                    </FieldArray>
+                                </CellCenter>
+                            </Row>
+                            <Row className='sticky bottom-0 mt1 z1'>
+                                <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}
+                                            className='flex justify-between'>
+                                    <Button className='col-5' style={{background: 'white'}} outlined>Cancel</Button>
+                                    <Button className='col-5' onClick={handleSubmit} raised>Save</Button>
+                                </CellCenter>
+                            </Row>
+                        </Grid>
+                    )
+                }
+            </Formik>
         );
     }
 }
