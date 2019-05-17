@@ -5,10 +5,10 @@ import {HelperText} from "@material/react-text-field";
 
 export class ContactInfo extends Component {
     render() {
-        const {contactName, setContactName, ...rest} = this.props;
+        const {contactName, setContactName, errorMessage, ...rest} = this.props;
         return (
-            <CleanableTextField className='col-12 mt1' outlined label='Full Name'
-                                helperText={<HelperText>Contact Full Name</HelperText>}
+            <CleanableTextField className='col-12 mt1' outlined label='Full Name' isValid={!errorMessage}
+                                helperText={<HelperText validation={!!errorMessage}>{errorMessage || 'Contact Full Name'}</HelperText>}
                                 value={contactName} setValue={(value) => setContactName(value)} {...rest}/>
         );
     }

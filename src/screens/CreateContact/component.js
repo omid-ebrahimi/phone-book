@@ -5,7 +5,8 @@ import {Grid, Row} from '@material/react-layout-grid';
 import Button from '@material/react-button';
 import CellCenter from '../../components/CellCenter';
 import {string, object, array} from 'yup';
-import {Formik, FieldArray, getIn} from "formik";
+import {Formik, FieldArray} from "formik";
+import {getErrorMessage} from '../../utils/formik'
 
 const validationSchema = object().shape({
     contact: object().shape({
@@ -72,7 +73,7 @@ class CreateContactScreen extends Component {
                             <Row className='overflow-hidden'>
                                 <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}>
                                     <ContactInfo id='contact.name' contactName={values.contact.name}
-                                                 isValid={!(getIn(errors, 'contact.name') && getIn(touched, 'contact.name'))}
+                                                 errorMessage={getErrorMessage(errors, touched, 'contact.name')}
                                                  setContactName={(value) => setFieldValue('contact.name', value)}
                                                  onBlur={handleBlur}/>
                                     <FieldArray name='phones'>
@@ -80,7 +81,7 @@ class CreateContactScreen extends Component {
                                             arrayHelpers => (
                                                 <PhonesList phones={values.phones}
                                                             getPhoneId={(index) => `phones[${index}]`}
-                                                            isValid={(index) => !(getIn(errors, `phones[${index}].number`) && getIn(touched, `phones[${index}].number`))}
+                                                            phoneIsValid={(index) => !getErrorMessage(errors, touched, `phones[${index}].number`)}
                                                             onChange={handleChange} onBlur={handleBlur}
                                                             setPhoneType={(index, value) => setFieldValue(`phones[${index}].type`, value)}
                                                             addPhone={() => arrayHelpers.push({
