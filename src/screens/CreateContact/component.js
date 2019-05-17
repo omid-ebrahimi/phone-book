@@ -10,7 +10,7 @@ import {getErrorMessage} from '../../utils/formik'
 
 const validationSchema = object().shape({
     contact: object().shape({
-        name: string().trim().max(30).required()
+        name: string().trim().max(30, 'Too long!').required('Required')
     }),
     phones: array().of(
         object().shape({
