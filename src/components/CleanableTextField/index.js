@@ -4,14 +4,8 @@ import TextField, {Input} from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
 
 class CleanableTextField extends Component {
-    constructor(props) {
-        super(props);
-        this.textInput = React.createRef();
-    }
-
     focusInput = () => {
-        if (!this.textInput) return;
-        const inputElement = this.textInput.inputElement;
+        const inputElement = this.textInput && this.textInput.inputElement;
         if (inputElement) {
             inputElement.focus();
         }
