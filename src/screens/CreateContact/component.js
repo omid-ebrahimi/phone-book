@@ -5,7 +5,7 @@ import {Grid, Row} from '@material/react-layout-grid';
 import Button from '@material/react-button';
 import CellCenter from '../../components/CellCenter';
 import {string, object, array} from 'yup';
-import {Formik, FieldArray} from "formik";
+import {Formik, FieldArray, getIn} from "formik";
 
 const validationSchema = object().shape({
     contact: object().shape({
@@ -72,7 +72,7 @@ class CreateContactScreen extends Component {
                             <Row className='overflow-hidden'>
                                 <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}>
                                     <ContactInfo id='contact.name' contactName={values.contact.name}
-                                                 isValid={!errors.contact || !errors.contact.name || !touched.contact || !touched.contact.name}
+                                                 isValid={!(getIn(errors, 'contact.name') && getIn(touched, 'contact.name'))}
                                                  setContactName={(value) => setFieldValue('contact.name', value)}
                                                  onBlur={handleBlur}/>
                                     <FieldArray name='phones'>
