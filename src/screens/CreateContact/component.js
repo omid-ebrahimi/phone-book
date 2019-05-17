@@ -13,7 +13,7 @@ const validationSchema = object().shape({
     }),
     phones: array().of(
         object().shape({
-            number: string().trim().max(13)
+            number: string().trim().matches(/^(\+\d{1,3})\d{10}$/, {excludeEmptyString: true})
         }))
 });
 
@@ -80,7 +80,8 @@ class CreateContactScreen extends Component {
                                             arrayHelpers => (
                                                 <PhonesList phones={values.phones}
                                                             getPhoneId={(index) => `phones[${index}]`}
-                                                            onChange={handleChange}
+                                                            isValid={(index) => !(getIn(errors, `phones[${index}].number`) && getIn(touched, `phones[${index}].number`))}
+                                                            onChange={handleChange} onBlur={handleBlur}
                                                             setPhoneType={(index, value) => setFieldValue(`phones[${index}].type`, value)}
                                                             addPhone={() => arrayHelpers.push({
                                                                 number: '',
