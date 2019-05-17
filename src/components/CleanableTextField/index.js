@@ -28,11 +28,12 @@ class CleanableTextField extends Component {
     }
 }
 
-CleanableTextField.prototypes = {
-    setValue: PropTypes.func.isRequired,
-    value: PropTypes.string,
-    onBlur: PropTypes.func,
-    isValid: PropTypes.bool
-};
-
 export default CleanableTextField;
+
+CleanableTextField.propTypes = {
+    id: PropTypes.string,
+    isValid: PropTypes.bool,
+    onBlur: PropTypes.func,
+    setValue: PropTypes.func.isRequired,
+    value: PropTypes.string
+};

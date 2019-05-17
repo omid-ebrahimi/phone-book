@@ -16,5 +16,6 @@ export class ContactInfo extends Component {
 
 ContactInfo.propTypes = {
     contactName: PropTypes.string,
+    errorMessage: PropTypes.string,
     setContactName: PropTypes.func.isRequired
 };
