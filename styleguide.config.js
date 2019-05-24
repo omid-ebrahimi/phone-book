@@ -9,12 +9,20 @@ module.exports = {
             description:'This section contains all screens and their specific components.',
             sections: [
                 {
+                    name: 'components',
+                    components: 'src/screens/components/**/*.js'
+                },
+                {
                     name: 'Contacts',
                     components: 'src/screens/Contacts/**/*.js'
                 },
                 {
                     name: 'CreateContact',
                     components: 'src/screens/CreateContact/**/*.js'
+                },
+                {
+                    name: 'UpdateContact',
+                    components: 'src/screens/UpdateContact/**/*.js'
                 }
             ],
             sectionDepth: 1
