@@ -9,6 +9,7 @@ const MainRouter = () => (
         <Route path="/" render={() => (<Redirect to="/contacts"/>)} exact/>
         <Route path="/contacts" component={ContactsScreen} exact/>
         <Route path="/contacts/create" component={CreateContactScreen} exact/>
+        <Route path="/contacts/edit/:id" component={CreateContactScreen} exact/>
         <Route component={NotFound} />
     </Switch>
 );

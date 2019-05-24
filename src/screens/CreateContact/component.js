@@ -6,7 +6,7 @@ import Button from '@material/react-button';
 import CellCenter from '../../components/CellCenter';
 import {string, object, array} from 'yup';
 import {Formik, FieldArray} from "formik";
-import {getErrorMessage} from '../../utils/formik'
+import {getErrorMessage} from '../../utils/formik';
 
 const validationSchema = object().shape({
     contact: object().shape({
@@ -19,21 +19,6 @@ const validationSchema = object().shape({
 });
 
 class CreateContactScreen extends Component {
-    // For Test
-    componentDidMount() {
-        const contactId =
-            this.props.updateContact('Omid Ebrahimi', '09104588100', '');
-        this.props.updatePhone(contactId, '09104588100', 'Mobile');
-
-        const contactId1 =
-            this.props.updateContact('Azam Ebrahimi', '09195036341', '');
-        this.props.updatePhone(contactId1, '09195036341', 'Mobile');
-
-        const contactId2 =
-            this.props.updateContact('Arman Ebrahimi', '09155246598', '');
-        this.props.updatePhone(contactId2, '09155246598', 'Mobile');
-    }
-
     onSubmit() {
         return (values, {setSubmitting}) => {
             setTimeout(() => {
@@ -43,14 +28,23 @@ class CreateContactScreen extends Component {
         };
     }
 
-    handleSave(values) {
+    handleSave({contact, phones}) {
+        const {updateContact, updatePhones} = this.props;
 
+        const contactId = updateContact(contact);
+        updatePhones(contactId, phones);
+
+        // Todo: Extract contact form to separate create and edit operations
+        if (!this.props.match.params.id) this.props.history.replace(`edit/${contactId}`);
+        this.props.history.push('/contacts');
     }
 
     render() {
+        const {contact,  phones} = this.props;
+
         const initialValues = {
-            contact: {id: '', name: '', defaultPhone: ''},
-            phones: [{number: '', type: 'Mobile'}]
+            contact: contact || {id: '', name: '', defaultPhone: ''},
+            phones: phones || [{number: '', type: 'Mobile'}]
         };
 
         return (
@@ -114,8 +108,9 @@ class CreateContactScreen extends Component {
 }
 
 CreateContactScreen.propTypes = {
+    contact: PropTypes.object,
     updateContact: PropTypes.func.isRequired,
-    updatePhone: PropTypes.func.isRequired
+    updatePhones: PropTypes.func.isRequired
 };
 
 export default CreateContactScreen;
