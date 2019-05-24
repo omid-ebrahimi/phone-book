@@ -8,9 +8,7 @@
     "@material/react-fab": "^0.12.1",
     "@material/react-icon-button": "^0.12.0",
     "@material/react-layout-grid": "^0.12.1",
-    "@material/react-list": "^0.12.0",
     "@material/react-material-icon": "^0.12.0",
-    "@material/react-menu-surface": "^0.12.1",
     "@material/react-select": "^0.12.1",
     "@material/react-text-field": "^0.12.1",
     "@material/react-typography": "^0.12.0",
@@ -48,9 +46,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-styleguidist": "^9.0.9",
     "flow-bin": "^0.94.0",
     "prop-types": "latest",
+    "react-styleguidist": "^9.0.9",
     "react-test-renderer": "^16.8.3"
   }
 }
