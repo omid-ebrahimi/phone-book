@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ContactForm from "../components/ContactForm";
+import {Redirect} from "react-router-dom";
 
-class CreateContactScreen extends Component {
+class UpdateContactScreen extends Component {
     onSubmit() {
         return (values, {setSubmitting}) => {
             setTimeout(() => {
@@ -18,19 +19,26 @@ class CreateContactScreen extends Component {
         const contactId = updateContact(contact);
         updatePhones(contactId, phones);
 
-        this.props.history.replace(`update/${contactId}`);
         this.props.history.push('/contacts');
     }
 
     render() {
-        return <ContactForm onSubmit={this.onSubmit()}/>;
+        const {contact, phones} = this.props;
+
+        if (!contact) return <Redirect to='/contacts/create'/>;
+
+        const initialValues = {contact, phones};
+
+        return <ContactForm initialValues={initialValues} onSubmit={this.onSubmit()}/>;
     }
 }
 
-CreateContactScreen.propTypes = {
+UpdateContactScreen.propTypes = {
+    contact: PropTypes.object.isRequired,
     history: PropTypes.object.isRequired,
+    phones: PropTypes.array,
     updateContact: PropTypes.func.isRequired,
     updatePhones: PropTypes.func.isRequired
 };
 
-export default CreateContactScreen;
+export default UpdateContactScreen;

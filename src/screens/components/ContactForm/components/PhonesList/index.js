@@ -1,8 +1,8 @@
 import React from 'react';
 import PhoneField from "./components/PhoneField";
-import MaterialIcon from "@material/react-material-icon";
-import {Headline5} from "@material/react-typography";
-import IconButton from "@material/react-icon-button";
+import MaterialIcon from "@material/react-material-icon/dist/index";
+import {Headline5} from "@material/react-typography/dist/index";
+import IconButton from "@material/react-icon-button/dist/index";
 
 export const PhonesList = ({phones, setPhoneType, addPhone, removePhone, getPhoneId, phoneIsValid, ...props}) => {
     return (
