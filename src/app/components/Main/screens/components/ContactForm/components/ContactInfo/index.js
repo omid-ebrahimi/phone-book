@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import CleanableTextField from "../../../../../../../components/CleanableTextField";
+import CleanableTextField from "../../../../../../../../components/CleanableTextField";
 import {HelperText} from "@material/react-text-field/dist/index";
 
 export class ContactInfo extends Component {

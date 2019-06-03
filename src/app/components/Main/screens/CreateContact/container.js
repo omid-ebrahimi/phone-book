@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {contacts, phones} from '../../../data/store/slices';
+import {contacts, phones} from '../../../../data/store/slices';
 import CreateContactScreen from './component';
 import uuid from 'uuid/v4';
 
