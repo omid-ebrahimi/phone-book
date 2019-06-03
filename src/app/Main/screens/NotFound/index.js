@@ -1,7 +1,7 @@
 import React from 'react';
 import {Grid, Row} from '@material/react-layout-grid/dist/index';
 import {Headline1, Headline5} from "@material/react-typography/dist/index";
-import CellCenter from "../../../components/CellCenter";
+import CellCenter from "../../../../components/CellCenter";
 
 export default function NoMatch({ location }) {
     return (

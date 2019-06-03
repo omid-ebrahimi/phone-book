@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import ContactForm from "../../components/ContactForm";
+import ContactForm from "../components/ContactForm";
 
 class CreateContactScreen extends Component {
     onSubmit() {
