@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import Card, {CardPrimaryContent} from '@material/react-card';
-import {Fab} from '@material/react-fab';
-import MaterialIcon from "@material/react-material-icon";
+import Card, {CardPrimaryContent} from '@material/react-card/dist/index';
+import {Fab} from '@material/react-fab/dist/index';
+import MaterialIcon from "@material/react-material-icon/dist/index";
 import './component.css';
 import {Link} from "react-router-dom";
 

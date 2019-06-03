@@ -6,7 +6,7 @@ import uuid from 'uuid/v4';
 const mapStateToProps = (state, ownProps) => {
     const {id} = ownProps.match.params;
     const contact = id ? state.contacts[id] : null;
-    const phones = contact && Object.values(state.phones).filter(phone => phone.contactId === contact.id);
+    const phones = contact && Object.values(state.phones).filter(phone => phone.contactId === id);
 
     return {contact, phones}
 };

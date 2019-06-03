@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import ContactForm from "../components/ContactForm";
+import ContactForm from "../../components/ContactForm";
 import {Redirect} from "react-router-dom";
 
 class UpdateContactScreen extends Component {
