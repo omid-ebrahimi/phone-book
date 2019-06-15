@@ -1,20 +1,5 @@
-@import '~basscss-flexbox/index.css';
-@import '~basscss-grid/lib/grid.css';
-@import '~basscss-margin/index.css';
-@import '~basscss-layout/index.css';
-@import '~basscss-position/index.css';
-@import '~@material/react-card/dist/card.css';
-@import '~@material/react-fab/dist/fab.css';
-@import '~@material/react-material-icon/dist/material-icon.css';
-@import '~@material/react-text-field/dist/text-field.css';
-@import '~@material/react-button/dist/button.css';
-@import "~@material/react-typography/dist/typography.css";
-@import "~@material/react-icon-button/dist/icon-button.css";
-@import "~@material/react-layout-grid/dist/layout-grid.css";
-@import "~@material/react-list/dist/list.css";
-@import "~@material/react-menu-surface/dist/menu-surface.css";
-@import "~@material/react-menu/dist/menu.css";
-@import "~@material/react-select/dist/select.css";
+@import 'assets/css/utilities.css';
+@import 'assets/css/theme/index.css';
 
 body {
   margin: 0;
@@ -33,15 +18,4 @@ code {
 
 header, section, footer, aside, nav, main, article, figure {
   display: block;
-}
-
-/* position */
-
-.sticky {
-  position: sticky;
-}
-
-/* color */
-.color-error {
-  color: #B00020
 }

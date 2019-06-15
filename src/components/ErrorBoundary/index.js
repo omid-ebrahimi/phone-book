@@ -25,7 +25,7 @@ class ErrorBoundary extends Component {
                 <Grid>
                     <Row>
                         <CellCenter desktopColumns={10} tabletColumns={8} phoneColumns={4}>
-                            <Headline1 className='color-error'>Something went wrong</Headline1>
+                            <Headline1 className='theme-color-error'>Something went wrong</Headline1>
                             <Headline5>
                                 Error Message: <code>{errorMessage}</code>
                             </Headline5>

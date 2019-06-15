@@ -1,0 +1,7 @@
+:root {
+    --theme-color-error: #B00020
+}
+
+.theme-color-error {
+    color: var(--theme-color-error)
+}
