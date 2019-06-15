@@ -1,0 +1,9 @@
+.cardPrimaryContent {
+    width: 15em;
+    padding: 1em;
+}
+
+.fabContainer {
+    position: fixed;
+    bottom: 1em;
+}
