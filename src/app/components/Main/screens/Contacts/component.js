@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Card, {CardPrimaryContent} from '@material/react-card';
 import {Fab} from '@material/react-fab';
 import MaterialIcon from "@material/react-material-icon";
-import {Link} from "react-router-dom";
 import styles from './index.module.css';
 
 class ContactsScreen extends Component {
@@ -26,7 +25,8 @@ class ContactsScreen extends Component {
                     }
                 </section>
                 <div className={`col-12 flex justify-center fab-container ${styles.fabContainer}`}>
-                    <Link to='/contacts/create'><Fab textLabel='Add Contact' icon={<MaterialIcon icon="add"/>}/></Link>
+                    <Fab onClick={() => history.push('/contacts/create')}
+                         textLabel='Add Contact' icon={<MaterialIcon icon="add"/>}/>
                 </div>
             </>
         );
