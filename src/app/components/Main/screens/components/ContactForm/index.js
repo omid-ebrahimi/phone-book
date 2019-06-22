@@ -24,67 +24,76 @@ const defaultInitialValues = {
     phones: [{number: '', type: 'Mobile'}]
 };
 
-const ContactForm = ({onSubmit, initialValues = defaultInitialValues}) => (
-    <Formik
-        initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={onSubmit}>
-        {
-            ({
-                 handleChange,
-                 handleBlur,
-                 submitForm,
-                 values,
-                 errors,
-                 touched,
-                 setFieldValue,
-                 isSubmitting
-             }) => (
-                <Grid>
-                    <Row className='overflow-hidden'>
-                        <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}>
-                            <ContactInfo id='contact.name' contactName={values.contact.name}
-                                         errorMessage={getErrorMessage(errors, touched, 'contact.name')}
-                                         setContactName={(value) => setFieldValue('contact.name', value)}
-                                         onBlur={handleBlur}/>
-                            <FieldArray name='phones'>
-                                {
-                                    arrayHelpers => (
-                                        <PhonesList phones={values.phones}
-                                                    getPhoneId={(index) => `phones[${index}]`}
-                                                    phoneIsValid={(index) => !getErrorMessage(errors, touched, `phones[${index}].number`)}
-                                                    onChange={handleChange} onBlur={handleBlur}
-                                                    setPhoneType={(index, value) => setFieldValue(`phones[${index}].type`, value)}
-                                                    addPhone={() => arrayHelpers.push({
-                                                        number: '',
-                                                        type: 'Mobile'
-                                                    })}
-                                                    removePhone={(index) => arrayHelpers.remove(index)}/>
-                                    )
-                                }
-                            </FieldArray>
-                        </CellCenter>
-                    </Row>
-                    <Row className='sticky bottom-0 mt1 z1'>
-                        <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}
-                                    className='flex justify-between'>
-                            <Button className='col-5' style={{background: 'white'}} disabled={isSubmitting} outlined>
-                                Cancel
-                            </Button>
-                            <Button className='col-5' onClick={submitForm} disabled={isSubmitting} raised>
-                                Save
-                            </Button>
-                        </CellCenter>
-                    </Row>
-                </Grid>
-            )
-        }
-    </Formik>
-);
+function ContactForm({handleSave, initialValues = defaultInitialValues}) {
+
+    function onSubmit({contact, phones}, {setSubmitting}) {
+        handleSave(contact, phones);
+        setSubmitting(false);
+    }
+
+    return (
+        <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={onSubmit}>
+            {
+                ({
+                     handleChange,
+                     handleBlur,
+                     submitForm,
+                     values,
+                     errors,
+                     touched,
+                     setFieldValue,
+                     isSubmitting
+                 }) => (
+                    <Grid>
+                        <Row className='overflow-hidden'>
+                            <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}>
+                                <ContactInfo id='contact.name' contactName={values.contact.name}
+                                             errorMessage={getErrorMessage(errors, touched, 'contact.name')}
+                                             setContactName={(value) => setFieldValue('contact.name', value)}
+                                             onBlur={handleBlur}/>
+                                <FieldArray name='phones'>
+                                    {
+                                        arrayHelpers => (
+                                            <PhonesList phones={values.phones}
+                                                        getPhoneId={(index) => `phones[${index}]`}
+                                                        phoneIsValid={(index) => !getErrorMessage(errors, touched, `phones[${index}].number`)}
+                                                        onChange={handleChange} onBlur={handleBlur}
+                                                        setPhoneType={(index, value) => setFieldValue(`phones[${index}].type`, value)}
+                                                        addPhone={() => arrayHelpers.push({
+                                                            number: '',
+                                                            type: 'Mobile'
+                                                        })}
+                                                        removePhone={(index) => arrayHelpers.remove(index)}/>
+                                        )
+                                    }
+                                </FieldArray>
+                            </CellCenter>
+                        </Row>
+                        <Row className='sticky bottom-0 mt1 z1'>
+                            <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}
+                                        className='flex justify-between'>
+                                <Button className='col-5' style={{background: 'white'}} disabled={isSubmitting}
+                                        outlined>
+                                    Cancel
+                                </Button>
+                                <Button className='col-5' onClick={submitForm} disabled={isSubmitting} raised>
+                                    Save
+                                </Button>
+                            </CellCenter>
+                        </Row>
+                    </Grid>
+                )
+            }
+        </Formik>
+    )
+}
 
 ContactForm.propTypes = {
     initialValues: PropTypes.object,
-    onSubmit: PropTypes.func.isRequired
+    handleSave: PropTypes.func.isRequired
 };
 
 export default ContactForm;

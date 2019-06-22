@@ -4,16 +4,8 @@ import ContactForm from "../components/ContactForm";
 import {Redirect} from "react-router-dom";
 
 class UpdateContactScreen extends Component {
-    onSubmit() {
-        return (values, {setSubmitting}) => {
-            setTimeout(() => {
-                this.handleSave(values);
-                setSubmitting(false);
-            }, 400);
-        };
-    }
 
-    handleSave({contact, phones}) {
+    handleSave(contact, phones) {
         const {updateContact, updatePhones} = this.props;
 
         const contactId = updateContact(contact);
@@ -29,7 +21,8 @@ class UpdateContactScreen extends Component {
 
         const initialValues = {contact, phones};
 
-        return <ContactForm initialValues={initialValues} onSubmit={this.onSubmit()}/>;
+        return <ContactForm initialValues={initialValues}
+                            handleSave={(contact, phones) => this.handleSave(contact, phones)}/>;
     }
 }
 

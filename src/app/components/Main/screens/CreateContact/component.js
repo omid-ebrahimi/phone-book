@@ -3,16 +3,8 @@ import PropTypes from 'prop-types';
 import ContactForm from "../components/ContactForm";
 
 class CreateContactScreen extends Component {
-    onSubmit() {
-        return (values, {setSubmitting}) => {
-            setTimeout(() => {
-                this.handleSave(values);
-                setSubmitting(false);
-            }, 400);
-        };
-    }
 
-    handleSave({contact, phones}) {
+    handleSave(contact, phones) {
         const {updateContact, updatePhones} = this.props;
 
         const contactId = updateContact(contact);
@@ -23,7 +15,7 @@ class CreateContactScreen extends Component {
     }
 
     render() {
-        return <ContactForm onSubmit={this.onSubmit()}/>;
+        return <ContactForm handleSave={(contact, phones) => this.handleSave(contact, phones)}/>;
     }
 }
 
