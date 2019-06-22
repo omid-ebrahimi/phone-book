@@ -1,9 +1,9 @@
 import React from 'react';
-import TextField, {Input} from "@material/react-text-field/dist/index";
+import TextField, {Input} from "@material/react-text-field";
 import {phoneTypes} from '../../../../../../../../../data/types/phones';
-import MaterialIcon from "@material/react-material-icon/dist/index";
-import IconButton from '@material/react-icon-button/dist/index';
-import Select from '@material/react-select/dist/index';
+import MaterialIcon from "@material/react-material-icon";
+import IconButton from '@material/react-icon-button';
+import Select from '@material/react-select';
 
 const types = Object.values(phoneTypes);
 
