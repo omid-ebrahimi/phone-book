@@ -5,6 +5,7 @@ import {persistedReducer} from './reducer'
 /* global process */
 export const store = configureStore({
     reducer: persistedReducer,
+    middleware: [],
     devTools: process.env.NODE_ENV !== 'production'
 });
 
