@@ -8,7 +8,7 @@ import styles from './index.module.css';
 
 class ContactsScreen extends Component {
     render() {
-        const {contacts} = this.props;
+        const {contacts, history} = this.props;
         return (
             <>
                 <section className='flex flex-wrap justify-center'>
@@ -16,7 +16,8 @@ class ContactsScreen extends Component {
                         Object.values(contacts).map(
                             contact => (
                                 <Card key={contact.id} className='m1'>
-                                    <CardPrimaryContent className={styles.cardPrimaryContent}>
+                                    <CardPrimaryContent onClick={() => history.push(`/contacts/update/${contact.id}`)}
+                                                        className={styles.cardPrimaryContent}>
                                         <h1>{contact.name}</h1>
                                         <p>Phone: {contact.defaultPhone}</p>
                                     </CardPrimaryContent>
