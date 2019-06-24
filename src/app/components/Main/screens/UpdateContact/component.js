@@ -1,14 +1,24 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import ContactForm from "../components/ContactForm";
 import {Redirect} from "react-router-dom";
+import ContactForm from "../components/ContactForm";
+
+function findRemovedNumbers(initialPhones, currentPhones) {
+    const initialNumbers = initialPhones.map(phone => phone.number);
+    const currentNumbers = currentPhones.map(phone => phone.number);
+    return  initialNumbers.filter(number => !currentNumbers.includes(number));
+}
 
 class UpdateContactScreen extends Component {
 
     handleSave(contact, phones) {
-        const {updateContact, updatePhones} = this.props;
+        const {updateContact, updatePhones, removePhones} = this.props;
 
         const contactId = updateContact(contact);
+
+        const removedNumbers = findRemovedNumbers(this.props.phones, phones);
+        removePhones(removedNumbers);
+
         updatePhones(contactId, phones);
 
         this.props.history.push('/contacts');

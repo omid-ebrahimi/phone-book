@@ -8,12 +8,17 @@ const updatePhone = (state: Phones, action: { payload: Phone }) => {
     state[phone.number] = phone
 };
 
+const removePhone = (state: Phones, action: { payload: string }) => {
+    delete state[action.payload];
+};
+
 // Slice
 export const phones = createSlice({
     slice: 'phones',
     initialState: {},
     reducers: {
-        updatePhone
+        updatePhone,
+        removePhone
     }
 });
 

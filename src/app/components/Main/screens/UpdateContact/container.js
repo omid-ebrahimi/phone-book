@@ -27,9 +27,18 @@ const mapDispatchToProps = dispatch => {
         phones.forEach(({number, type}) => updatePhone({contactId, number, type}));
     }
 
+    function removePhone(number) {
+        dispatch(phones.actions.removePhone(number));
+    }
+
+    function removePhones([...numbers]) {
+        numbers.forEach(number => removePhone(number));
+    }
+
     return {
         updateContact,
-        updatePhones
+        updatePhones,
+        removePhones
     }
 };
 
