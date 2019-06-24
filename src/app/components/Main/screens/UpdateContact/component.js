@@ -11,7 +11,16 @@ function findRemovedNumbers(initialPhones, currentPhones) {
 
 class UpdateContactScreen extends Component {
 
-    handleSave(contact, phones) {
+    static propTypes = {
+      contact: PropTypes.object.isRequired,
+      history: PropTypes.object.isRequired,
+      phones: PropTypes.array,
+      removePhones: PropTypes.func.isRequired,
+      updateContact: PropTypes.func.isRequired,
+      updatePhones: PropTypes.func.isRequired
+  };
+
+  handleSave(contact, phones) {
         const {updateContact, updatePhones, removePhones} = this.props;
 
         const contactId = updateContact(contact);
@@ -35,13 +44,5 @@ class UpdateContactScreen extends Component {
                             handleSave={(contact, phones) => this.handleSave(contact, phones)}/>;
     }
 }
-
-UpdateContactScreen.propTypes = {
-    contact: PropTypes.object.isRequired,
-    history: PropTypes.object.isRequired,
-    phones: PropTypes.array,
-    updateContact: PropTypes.func.isRequired,
-    updatePhones: PropTypes.func.isRequired
-};
 
 export default UpdateContactScreen;
