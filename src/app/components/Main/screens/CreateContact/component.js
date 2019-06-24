@@ -15,7 +15,8 @@ class CreateContactScreen extends Component {
     }
 
     render() {
-        return <ContactForm handleSave={(contact, phones) => this.handleSave(contact, phones)}/>;
+        return <ContactForm handleSave={(contact, phones) => this.handleSave(contact, phones)}
+                            handleCancel={this.props.history.goBack}/>;
     }
 }
 

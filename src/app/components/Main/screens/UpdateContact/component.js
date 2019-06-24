@@ -21,7 +21,7 @@ class UpdateContactScreen extends Component {
   };
 
   handleSave(contact, phones) {
-        const {updateContact, updatePhones, removePhones} = this.props;
+        const {updateContact, updatePhones, removePhones, history} = this.props;
 
         const contactId = updateContact(contact);
 
@@ -30,18 +30,19 @@ class UpdateContactScreen extends Component {
 
         updatePhones(contactId, phones);
 
-        this.props.history.push('/contacts');
+        history.push('/contacts');
     }
 
     render() {
-        const {contact, phones} = this.props;
+        const {contact, phones, history} = this.props;
 
         if (!contact) return <Redirect to='/contacts/create'/>;
 
         const initialValues = {contact, phones};
 
         return <ContactForm initialValues={initialValues}
-                            handleSave={(contact, phones) => this.handleSave(contact, phones)}/>;
+                            handleSave={(contact, phones) => this.handleSave(contact, phones)}
+                            handleCancel={history.goBack}/>;
     }
 }
 

@@ -24,7 +24,7 @@ const defaultInitialValues = {
     phones: [{number: '', type: 'Mobile'}]
 };
 
-function ContactForm({handleSave, initialValues = defaultInitialValues}) {
+function ContactForm({handleSave, handleCancel, initialValues = defaultInitialValues}) {
 
     function onSubmit({contact, phones}, {setSubmitting}) {
         handleSave(contact, phones);
@@ -75,11 +75,11 @@ function ContactForm({handleSave, initialValues = defaultInitialValues}) {
                         <Row className='sticky bottom-0 mt1 z1'>
                             <CellCenter desktopColumns={4} tabletColumns={6} phoneColumns={4}
                                         className='flex justify-between'>
-                                <Button className='col-5' style={{background: 'white'}} disabled={isSubmitting}
-                                        outlined>
+                                <Button onClick={handleCancel} disabled={isSubmitting} className='col-5'
+                                        style={{background: 'white'}} outlined>
                                     Cancel
                                 </Button>
-                                <Button className='col-5' onClick={submitForm} disabled={isSubmitting} raised>
+                                <Button onClick={submitForm} disabled={isSubmitting} className='col-5' raised>
                                     Save
                                 </Button>
                             </CellCenter>
