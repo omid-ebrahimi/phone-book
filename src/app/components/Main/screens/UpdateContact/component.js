@@ -6,23 +6,24 @@ import ContactForm from "../components/ContactForm";
 function findRemovedNumbers(initialPhones, currentPhones) {
     const initialNumbers = initialPhones.map(phone => phone.number);
     const currentNumbers = currentPhones.map(phone => phone.number);
-    return  initialNumbers.filter(number => !currentNumbers.includes(number));
+    return initialNumbers.filter(number => !currentNumbers.includes(number));
 }
 
 class UpdateContactScreen extends Component {
 
     static propTypes = {
-      contact: PropTypes.object.isRequired,
-      history: PropTypes.object.isRequired,
-      phones: PropTypes.array,
-      removePhones: PropTypes.func.isRequired,
-      updateContact: PropTypes.func.isRequired,
-      updatePhones: PropTypes.func.isRequired
-  };
+        contact: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired,
+        phones: PropTypes.array,
+        removePhones: PropTypes.func.isRequired,
+        updateContact: PropTypes.func.isRequired,
+        updatePhones: PropTypes.func.isRequired
+    };
 
-  handleSave(contact, phones) {
+    handleSave(contact, phones) {
         const {updateContact, updatePhones, removePhones, history} = this.props;
 
+        if (phones[0]) contact.defaultPhone = phones[0].number;
         const contactId = updateContact(contact);
 
         const removedNumbers = findRemovedNumbers(this.props.phones, phones);

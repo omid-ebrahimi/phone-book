@@ -7,7 +7,9 @@ class CreateContactScreen extends Component {
     handleSave(contact, phones) {
         const {updateContact, updatePhones} = this.props;
 
+        if (phones[0]) contact.defaultPhone = phones[0].number;
         const contactId = updateContact(contact);
+
         updatePhones(contactId, phones);
 
         this.props.history.replace(`update/${contactId}`);
