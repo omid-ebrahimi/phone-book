@@ -6,6 +6,11 @@ import MaterialIcon from "@material/react-material-icon";
 import styles from './index.module.css';
 
 class ContactsScreen extends Component {
+    static propTypes = {
+        contacts: PropTypes.object.isRequired,
+        history: PropTypes.object.isRequired
+    };
+
     render() {
         const {contacts, history} = this.props;
         return (
@@ -13,14 +18,14 @@ class ContactsScreen extends Component {
                 <section className='flex flex-wrap justify-center'>
                     {
                         Object.values(contacts).map(
-                            contact => (
+                            contact =>
                                 <Card key={contact.id} className='m1'>
                                     <CardPrimaryContent onClick={() => history.push(`/contacts/update/${contact.id}`)}
                                                         className={styles.cardPrimaryContent}>
                                         <h1>{contact.name}</h1>
                                         <p>Phone: {contact.defaultPhone}</p>
                                     </CardPrimaryContent>
-                                </Card>)
+                                </Card>
                         )
                     }
                 </section>
@@ -32,9 +37,5 @@ class ContactsScreen extends Component {
         );
     }
 }
-
-ContactsScreen.propTypes = {
-    contacts: PropTypes.object.isRequired
-};
 
 export default ContactsScreen;
